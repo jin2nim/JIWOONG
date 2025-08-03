@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="main.css">
+    
+    <title>Wedding</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <!-- section1 메인 비주얼 -->
+        <section id="section_1">
+            <img src="./img/main_visual.png" alt="main_visual">
+            <div class="grid_area">
+                <div class="text_area">
+                    <p><span class="font_big">2025. 10. 25</span> 12:00 PM
+                    <br>여의도 웨딩컨벤션</p>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="text_area">
+                    <div class="flex_area">
+                        <p>
+                            Donghoon<br>
+                            <span class="name">유 동 훈</span>
+                        </p>
+                        <p class="ballet">and</p>
+                        <p>
+                            Halim<br>
+                            <span class="name">정 하 림</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section2 초대의 말 -->
+        <section id="section_2">
+            <div class="pattern pattern_top "></div>
+            <div class="bg_pattern">
+                <img src="./img/pattern.png" alt="background">
+                <div class="grid_area">
+                    <div class="invite_title">
+                        <h5>Invite You</h5>
+                    </div>
+                    <div>
+                        <p>
+                            <span class="text_blue">동</span>화처럼 시작된 우리의 시작이
+                            <br><span class="text_blue">훈</span>풍처럼 따뜻한 시간을 지나
+                            <br><span class="text_pink">하</span>루하루 쌓인 마음이 사랑이 되어
+                            <br><span class="text_pink">림</span>루하루 쌓인 마음이 사랑이 되어
+                            <br><br>
+                            저희 두 사람, 결혼합니다.
+                        </p>
+                    </div>
+                    <div class="border"></div>
+                    <div>
+                        <p class="noto-sans name">
+                            <b class="noto-sans text_bold">유진호 · 곽일심</b>의 장남 <span>동훈</span>
+                            <br>
+                            <b class="noto-sans text_bold">정일영 · 유영옥</b>의 장녀 <span>하림</span>
+                        </p>
+                    </div>
+                    <div>
+                        <a href="#" class="btn-blue bg_blue noto-sans text_white">신랑&신부 러브 스토리 보러가기</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pattern pattern_bottom"></div>
+        </section>
+        <!-- section3 캘린더 -->
+        <section id="section_3">
+            <p class="sub_title">Wedding Day</p>
+            <h1 class="month">October</h1>
+            <!-- 캘린더 영역 -->
+            <div class="calendar">
+                <div>일</div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div>토</div>
+                <!-- 빈칸 (수요일부터 시작하므로 2칸 공백) -->
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <!-- 날짜 1~31 -->
+                <div>1</div><div>2</div><div>3</div><div>4</div>
+                <div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div>
+                <div>12</div><div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div>
+                <div>19</div><div>20</div><div>21</div><div>22</div><div>23</div><div>24</div>
+                <div class="dday">25</div>
+                <div>26</div><div>27</div><div>28</div><div>29</div><div>30</div><div>31</div>
+            </div>
+            <div class="info">
+                <p>2025년 10월 25일 오후 12시
+                    <br>여의도 웨딩컨벤션 2F
+                </p>
+            </div>
+        </section>
+        <!-- section4 디데이 -->
+        <section id="section_4" class="bg_pattern">
+            <div class="flex_area title">
+                <p>DAY</p>
+                <P>:</P>
+                <p>HOUR</p>
+                <P>:</P>
+                <p>MIN</p>
+            </div>
+            <div class="flex_area dday">
+                <p id="dday-day">DAY</p>
+                <P>:</P>
+                <p id="dday-hour">HOUR</p>
+                <P>:</P>
+                <p id="dday-min">MIN</p>
+            </div>   
+            <p class="dday-summary">동훈 ♥ 하림님의 결혼이 <span id="dday-left" class="text_pink">0</span>일 남았습니다.</p>       
+            <!-- 디데이 카운터 / 기준일 10월 25일 오후 12시(한국시간) -->
+            <script>
+                const targetDate = new Date("2025-10-25T12:00:00+09:00");
+
+                function updateTimer() {
+                    const now = new Date();
+                    const timeDiff = targetDate - now;
+
+                    if (timeDiff <= 0) {
+                        document.getElementById("dday-day").innerText = "00";
+                        document.getElementById("dday-hour").innerText = "00";
+                        document.getElementById("dday-min").innerText = "00";
+                        document.getElementById("dday-left").innerText = "0";
+                        clearInterval(timer);
+                        return;
+                    }
+
+                    // 디데이 카운터 (시간까지 계산)
+                    const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
+                    const minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
+
+                    document.getElementById("dday-day").innerText = String(days).padStart(2, '0');
+                    document.getElementById("dday-hour").innerText = String(hours).padStart(2, '0');
+                    document.getElementById("dday-min").innerText = String(minutes).padStart(2, '0');
+
+                    // 디데이 카운터 (날짜만 계산 - 아래 써머리)
+                    const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+                    document.getElementById("dday-left").innerText = daysLeft;
+                }
+
+                const timer = setInterval(updateTimer, 1000);
+                updateTimer();
+            </script>
+        </section>
+        <!-- section5 갤러리 -->
+        <section id="section_5"></section>
+        <!-- section6 연락처 -->
+        <section id="section_6" class="bg_pattern"></section>
+        <!-- section7 계좌번호 -->
+        <section id="section_7"></section>
+        <!-- section8 장소안내 -->
+        <section id="section_8" class="bg_pattern"></section>
+        <!-- section9 지도 -->
+        <section id="section_9"></section>
+    </main>
+    <footer></footer>
+</body>
+</html>

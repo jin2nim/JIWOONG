@@ -31,7 +31,7 @@
 }
 
 body {
-    background-color: #d0d3d7;
+    background-color: #eee;
 }
 
 img {
@@ -74,6 +74,9 @@ img {
 }
 .bg_pink {
     background-color: #e295a6;
+}
+.bg_gray {
+    background-color: #dedede;
 }
 .sub_title {
     text-align: center;

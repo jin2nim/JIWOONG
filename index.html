@@ -7,10 +7,16 @@
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
+    <!-- masonry.js --- for gallery -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
     <!-- stylesheet -->
     <link rel="stylesheet" href="main.css">
-    
+    <!-- LightGallery CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css">
+
     <title>Wedding</title>
 </head>
 <body>
@@ -46,33 +52,23 @@
         <section id="section_2">
             <div class="pattern pattern_top "></div>
             <div class="bg_pattern">
-                <img src="./img/pattern.png" alt="background">
-                <div class="grid_area">
-                    <div class="invite_title">
-                        <h5>Invite You</h5>
-                    </div>
-                    <div>
-                        <p>
-                            <span class="text_blue">동</span>화처럼 시작된 우리의 시작이
-                            <br><span class="text_blue">훈</span>풍처럼 따뜻한 시간을 지나
-                            <br><span class="text_pink">하</span>루하루 쌓인 마음이 사랑이 되어
-                            <br><span class="text_pink">림</span>루하루 쌓인 마음이 사랑이 되어
-                            <br><br>
-                            저희 두 사람, 결혼합니다.
-                        </p>
-                    </div>
-                    <div class="border"></div>
-                    <div>
-                        <p class="noto-sans name">
-                            <b class="noto-sans text_bold">유진호 · 곽일심</b>의 장남 <span>동훈</span>
-                            <br>
-                            <b class="noto-sans text_bold">정일영 · 유영옥</b>의 장녀 <span>하림</span>
-                        </p>
-                    </div>
-                    <div>
-                        <a href="#" class="btn-blue bg_blue noto-sans text_white">신랑&신부 러브 스토리 보러가기</a>
-                    </div>
+                <h5 class="title">Invite You</h5>
+                <div class="main_content">
+                    <p>
+                        <span class="text_blue">동</span>화처럼 시작된 우리의 시작이
+                        <br><span class="text_blue">훈</span>풍처럼 따뜻한 시간을 지나
+                        <br><span class="text_pink">하</span>루하루 쌓인 마음이 사랑이 되어
+                        <br><span class="text_pink">림</span>루하루 쌓인 마음이 사랑이 되어
+                        <br><br>
+                        저희 두 사람, 결혼합니다.
+                    </p>
                 </div>
+                <div class="border"></div>
+                <p class="noto-sans name">
+                    <b class="noto-sans text_bold">유진호 · 곽일심</b>의 장남 <span>동훈</span>
+                    <br>
+                    <b class="noto-sans text_bold">정일영 · 유영옥</b>의 장녀 <span>하림</span>
+                </p>
             </div>
             <div class="pattern pattern_bottom"></div>
         </section>
@@ -83,7 +79,8 @@
             <!-- 캘린더 영역 -->
             <div class="calendar">
                 <div>일</div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div>토</div>
-                <!-- 빈칸 (수요일부터 시작하므로 2칸 공백) -->
+                <!-- 빈칸 (수요일부터 시작하므로 3칸 공백) -->
+                <div class="empty"></div>
                 <div class="empty"></div>
                 <div class="empty"></div>
                 <!-- 날짜 1~31 -->
@@ -154,7 +151,94 @@
             </script>
         </section>
         <!-- section5 갤러리 -->
-        <section id="section_5"></section>
+        <section id="section_5" class="bg_gray">
+            <p class="sub_title">Wedding Gallary</p>
+            <div class="gallery_grid" id="lightgallery">
+                <div class="grid-sizer"></div>
+                <a href="./gallery/1.jpg">
+                    <img src="./gallery/1.jpg" alt="photo1">
+                </a>
+                <a href="./gallery/2.jpg">
+                    <img src="./gallery/2.jpg" alt="photo1">
+                </a>
+                <a href="./gallery/3.jpg">
+                    <img src="./gallery/3.jpg" alt="photo1">
+                </a>
+                <a href="./gallery/4.jpg">
+                    <img src="./gallery/4.jpg" alt="photo1">
+                </a>
+                <a href="./gallery/5.jpg">
+                    <img src="./gallery/5.jpg" alt="photo1">
+                </a>
+                <a href="./gallery/6.jpg">
+                    <img src="./gallery/6.jpg" alt="photo1">
+                </a>
+                <a href="./gallery/7.jpg">
+                    <img src="./gallery/7.jpg" alt="photo1">
+                </a>
+                <a href="./gallery/8.jpg">
+                    <img src="./gallery/8.jpg" alt="photo1">
+                </a>
+                <a href="./gallery/9.jpg">
+                    <img src="./gallery/9.jpg" alt="photo1">
+                </a>
+                <a href="./gallery/10.jpg">
+                    <img src="./gallery/10.jpg" alt="photo1">
+                </a>
+                <a href="./gallery/11.jpg">
+                    <img src="./gallery/11.jpg" alt="photo1">
+                </a>
+                <a href="./gallery/12.jpg">
+                    <img src="./gallery/12.jpg" alt="photo1">
+                </a>
+                <a href="./gallery/13.jpg">
+                    <img src="./gallery/13.jpg" alt="photo1">
+                </a>
+                <a href="./gallery/14.jpg">
+                    <img src="./gallery/14.jpg" alt="photo1">
+                </a>
+                <a href="./gallery/15.jpg">
+                    <img src="./gallery/15.jpg" alt="photo1">
+                </a>
+                <a href="./gallery/16.jpg">
+                    <img src="./gallery/16.jpg" alt="photo1">
+                </a>
+                <a href="./gallery/17.jpg">
+                    <img src="./gallery/17.jpg" alt="photo1">
+                </a>
+                <a href="./gallery/18.jpg">
+                    <img src="./gallery/18.jpg" alt="photo1">
+                </a>
+                <a href="./gallery/19.jpg">
+                    <img src="./gallery/19.jpg" alt="photo1">
+                </a>
+            </div>
+            <!-- 갤러리 레이아웃 및 팝업 슬라이드 -->
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const grid = document.querySelector(".gallery_grid");
+
+                    // Masonry 레이아웃 초기화 (필요한 경우)
+                    imagesLoaded(grid, function () {
+                        new Masonry(grid, {
+                            itemSelector: "a", // 그리드의 각 항목
+                            columnWidth: ".grid-sizer", // 열 너비 설정
+                            gutter: 16, // 간격 설정
+                            percentPosition: true, // 비율에 맞춰 위치 설정
+                        });
+                    });
+
+                    // lightGallery 초기화
+                    lightGallery(document.getElementById('lightgallery'), {
+                        selector: 'a', // 'a' 태그를 클릭할 때 슬라이드쇼 실행
+                        plugins: [lgThumbnail, lgZoom], // 썸네일, 줌 플러그인 사용
+                        thumbnail: true, // 썸네일 활성화
+                        zoom: true, // 이미지 확대 기능 활성화
+                        fullScreen: true, // 전체 화면 모드 활성화
+                    });
+                });
+            </script>
+        </section>
         <!-- section6 연락처 -->
         <section id="section_6" class="bg_pattern"></section>
         <!-- section7 계좌번호 -->
@@ -165,5 +249,10 @@
         <section id="section_9"></section>
     </main>
     <footer></footer>
+    <!-- LightGallery JS -->
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+
 </body>
 </html>

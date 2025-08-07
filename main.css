@@ -51,12 +51,19 @@ img {
     position: relative;
     z-index: 2;
 }
+.bg_pattern {
+    background-image: url(./img/pattern.png);
+    width: 100%;
+    background-size: cover;
+}
 .pattern_top {
     background-image: url(./img/pattern_top.png);
-    margin-top: -6.66vw;
+    margin-top: calc(-100% / 15);
+    margin-bottom: -1px;
 }
 .pattern_bottom {
     background-image: url(./img/pattern_bottom.png);
+    margin-bottom: calc(-100% / 15);
 }
 .text_blue {
     color: #7aaac7;
@@ -84,13 +91,17 @@ img {
 }
 .sub_title::before,
 .sub_title::after {
-    content: "♥";
-    color: #e295a6;
-    font-size: 0.5rem;
-    position: relative;
-    top: -1px;
+    content: "";
+    display: inline-block;
+    width: 0.7rem;
+    height: 0.7rem;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23e295a6' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 C2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09 C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5 c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>");
+    background-size: contain;
+    background-repeat: no-repeat;
     margin: 0 25px;
+    position: relative;
 }
+
 
 section {
     max-width: 720px;
@@ -146,74 +157,46 @@ section {
 
 /* section2 초대의 말 */
 #section_2 {
-    .bg_pattern{
-        width: fit-content;
-        position: relative;
+    text-align: center;
+    line-height: 1.8rem;
+    position: relative;
+    z-index: 2;
+    .bg_pattern {
+        padding: 50px 0;
     }
-    img{
-        position: relative;
-        z-index: 1;
-        height: auto;
+    .title {
+        font-size: 1.345rem;
+        font-weight: 800;        
     }
-    .grid_area {
-        position: absolute;
+    .main_content {
+        margin: 36px auto;
+        span {
+            font-weight: 800;
+        }
+    }
+    .border {
+        background-image: url(./img/flower.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: auto 50px;
+        height: 50px;
         width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        display: grid;
-        grid-template-rows: 2fr 5fr 2fr 2fr 3fr;
-        z-index: 2;
-        
-        div {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            width: 100%;
-            p {
-                width: 100%;
-                display: block;
-                line-height: 1.8;
-            }
-            .name {
-                span {
-                    font-size: 1.25rem;
-                    letter-spacing: 3px;
-                    margin-left: 5px;
-                    font-weight: 600;
-                }
-            }
-        }
-        .invite_title {
-            /* align-items: flex-end; */
-            h5 {
-                font-size: 1.345rem;
-                font-weight: 600;
-            }
-            
-        }
-        .border {
-            background-image: url(./img/flower.png);
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: auto 60%;
-            width: 100%;
-        }
-        .btn-blue {
-            display: block;
-            width: 80%;
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-weight: 200;
-        }
-        
     }
+    .name {
+        margin: 36px 0;
+        span {
+            font-size: 1.25rem;
+            letter-spacing: 3px;
+            margin-left: 5px;
+            font-weight: 600;
+        }
+    }
+    
 }
 
 /* section3 캘린더 */
 #section_3 {
-    padding: 50px 0;
+    padding: 100px 0;
     .month {
         font-size: 1.5rem;
         font-weight: 600;
@@ -243,8 +226,8 @@ section {
     .calendar {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
-        gap: 20px 5px;
-        margin-top: 20px;
+        gap: 20px 0;
+        margin: 0 auto;
         width: 80%;
         font-size: 0.9rem;
         text-align: center;
@@ -263,12 +246,17 @@ section {
             position: relative;
         }
         .dday::before {
-            content: "♥";
+            content: "";
+            display: inline-block;
+            width: 1.2rem;
+            height: 1.2rem;
+            background-image: url("data:image/svg+xml;utf8,<svg fill='%23e295a6' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 C2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09 C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5 c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>");
+            background-size: contain;
+            background-repeat: no-repeat;
             position: absolute;
             top: -50%;
             left: 50%;
             transform: translate(-50%);
-            color: #e295a6;
         }
     }
 
@@ -299,6 +287,7 @@ section {
     }
 }
 
+/* section4 디데이 */
 #section_4 {
     background-image: url(./img/pattern.png);
     background-repeat: no-repeat;
@@ -330,5 +319,35 @@ section {
         span {
             font-weight: 800;
         }
+    }
+}
+
+/* section5 갤러리 */
+#section_5 {
+    padding: 100px 0;
+    .gallery_grid {
+        width: 90%;
+        margin: 50px auto;
+        position: relative; /* 중요 */
+    }
+
+    /* 공통 너비 */
+    .gallery_grid .grid-sizer,
+    .gallery_grid a {
+        width: calc(50% - 8px); /* 2열 + gutter 고려 */
+        float: left; /* 핵심 */
+    }
+
+    .gallery_grid a {
+        display: block;
+        margin-bottom: 16px;
+        border-radius: 10px;
+    }
+
+    .gallery_grid img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 10px;
     }
 }

@@ -373,7 +373,8 @@ section {
         #moreBtn {
             background: none;
             border: none;
-            font-size: 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
             cursor: pointer;
             color: #555;
             position: relative;
@@ -383,7 +384,7 @@ section {
             content: "";
             position: absolute;
             background-image: url(./img/allow.svg);
-            bottom: -20px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
             width: 24px;
@@ -392,7 +393,7 @@ section {
         #moreBtn.open::after {
             transform: translateX(-50%) rotate(180deg);
             bottom: 0;
-            top: -20px;
+            top: -15px;
         }
     }
 }
@@ -409,8 +410,12 @@ section {
         padding: 50px 0 100px;
         grid-template-columns: repeat(2, 1fr);
         gap: 10%;
+        p, span {
+            font-size: 0.85rem;
+        }
         .name {
-            font-size: 1.345rem;
+            font-size: 1.25rem;
+            font-weight: 600;
             span {
                 font-weight: normal;
             }
@@ -433,6 +438,6 @@ section {
     .main_text {
         padding: 50px 0;
         text-align: center;
-        font-size: 1.25rem;
+        line-height: 1.8;
     }
 }

@@ -156,62 +156,65 @@
             <div class="gallery_grid" id="lightgallery">
                 <div class="grid-sizer"></div>
                 <a href="./gallery/1.jpg">
-                    <img src="./gallery/1.jpg" alt="photo1">
+                    <img src="./gallery/s_1.jpg">
                 </a>
                 <a href="./gallery/2.jpg">
-                    <img src="./gallery/2.jpg" alt="photo1">
+                    <img src="./gallery/s_2.jpg">
                 </a>
                 <a href="./gallery/3.jpg">
-                    <img src="./gallery/3.jpg" alt="photo1">
+                    <img src="./gallery/s_3.jpg">
                 </a>
                 <a href="./gallery/4.jpg">
-                    <img src="./gallery/4.jpg" alt="photo1">
+                    <img src="./gallery/s_4.jpg">
                 </a>
                 <a href="./gallery/5.jpg">
-                    <img src="./gallery/5.jpg" alt="photo1">
+                    <img src="./gallery/s_5.jpg">
                 </a>
                 <a href="./gallery/6.jpg">
-                    <img src="./gallery/6.jpg" alt="photo1">
+                    <img src="./gallery/s_6.jpg">
                 </a>
                 <a href="./gallery/7.jpg">
-                    <img src="./gallery/7.jpg" alt="photo1">
+                    <img src="./gallery/s_7.jpg">
                 </a>
                 <a href="./gallery/8.jpg">
-                    <img src="./gallery/8.jpg" alt="photo1">
+                    <img src="./gallery/s_8.jpg">
                 </a>
                 <a href="./gallery/9.jpg">
-                    <img src="./gallery/9.jpg" alt="photo1">
+                    <img src="./gallery/s_9.jpg">
                 </a>
                 <a href="./gallery/10.jpg">
-                    <img src="./gallery/10.jpg" alt="photo1">
+                    <img src="./gallery/s_10.jpg">
                 </a>
                 <a href="./gallery/11.jpg">
-                    <img src="./gallery/11.jpg" alt="photo1">
+                    <img src="./gallery/s_11.jpg">
                 </a>
                 <a href="./gallery/12.jpg">
-                    <img src="./gallery/12.jpg" alt="photo1">
+                    <img src="./gallery/s_12.jpg">
                 </a>
                 <a href="./gallery/13.jpg">
-                    <img src="./gallery/13.jpg" alt="photo1">
+                    <img src="./gallery/s_13.jpg">
                 </a>
                 <a href="./gallery/14.jpg">
-                    <img src="./gallery/14.jpg" alt="photo1">
+                    <img src="./gallery/s_14.jpg">
                 </a>
                 <a href="./gallery/15.jpg">
-                    <img src="./gallery/15.jpg" alt="photo1">
+                    <img src="./gallery/s_15.jpg">
                 </a>
                 <a href="./gallery/16.jpg">
-                    <img src="./gallery/16.jpg" alt="photo1">
+                    <img src="./gallery/s_16.jpg">
                 </a>
                 <a href="./gallery/17.jpg">
-                    <img src="./gallery/17.jpg" alt="photo1">
+                    <img src="./gallery/s_17.jpg">
                 </a>
                 <a href="./gallery/18.jpg">
-                    <img src="./gallery/18.jpg" alt="photo1">
+                    <img src="./gallery/s_18.jpg">
                 </a>
                 <a href="./gallery/19.jpg">
-                    <img src="./gallery/19.jpg" alt="photo1">
+                    <img src="./gallery/s_19.jpg">
                 </a>
+            </div>
+            <div class="more-btn">
+                <button id="moreBtn" class="noto-sans">사진 더 보기</button>
             </div>
             <!-- 갤러리 레이아웃 및 팝업 슬라이드 -->
             <script>
@@ -236,13 +239,71 @@
                         zoom: true, // 이미지 확대 기능 활성화
                         fullScreen: true, // 전체 화면 모드 활성화
                     });
+
+                    // 더보기 버튼 클릭 시, height값 100% 잡기
+                    const moreBtn = document.getElementById("moreBtn");
+                    const galleryGrid = document.querySelector('.gallery_grid');
+
+                    // 더 보기 버튼 클릭 시, 화살표 위치 이동
+                    moreBtn.addEventListener("click", function(){
+                        const isOpen = galleryGrid.classList.toggle("show-all");
+                        moreBtn.classList.toggle("open", isOpen);
+
+                        moreBtn.textContent = isOpen ? "닫기" : "사진 더 보기";
+                        if(!isOpen) {
+                            window.scrollTo({top: galleryGrid.offsetTop - 50, behavior: 'smooth'});
+                        }
+                    });
                 });
             </script>
         </section>
         <!-- section6 연락처 -->
-        <section id="section_6" class="bg_pattern"></section>
+        <section id="section_6">
+            <div class="pattern pattern_top "></div>
+            <div class="bg_pattern">
+                <h5 class="title">Contact Us</h5>
+                <p class="sub_title">Our Profile</p>
+                <div class="profile-grid noto-sans">
+                    <div class="bloom">
+                        <img src="./img/profile_bloom.png" alt="신랑 사진">
+                        <p class="text_bold name"><span class="text_blue">신랑</span> 유동훈</p>
+                        <div class="character">
+                            <p>MBTI,</p>
+                            <p>피아노 전공</p>
+                            <p>성격성셕세심다정??</p>
+                        </div>
+                        <div class="border">
+                            <svg fill="#a8d0e6" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 C2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09 C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5 c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>
+                        </div>
+                        <p>너마눌사랑해</p>
+                    </div>
+                    <div class="bride">
+                        <img src="./img/profile_bride.png" alt="신부 사진">
+                        <p class="text_bold name"><span class="text_pink">신부</span> 정하림</p>
+                        <div class="character">
+                            <p>MBTI,</p>
+                            <p>영상 전공</p>
+                            <p>성격성셕세심다정??</p>
+                        </div>
+                        <div class="border">
+                            <svg fill="#e295a6" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 C2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09 C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5 c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>
+                        </div>
+                        <p>너마눌사랑해</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pattern pattern_bottom"></div>
+        </section>
         <!-- section7 계좌번호 -->
-        <section id="section_7"></section>
+        <section id="section_7" class="bg_gray">
+            <p class="sub_title">축하의 마음 전하기</p>
+            <p class="main_text">
+                저희 두 사람의 소중한 시작을
+                <br>함께해 주시는 모든 분들께 감사드리며,
+                <br>전해주시는 따듯한 진심을 배워
+                <br>오래도록 행복하게 잘 살겠습니다.   
+            </p>
+        </section>
         <!-- section8 장소안내 -->
         <section id="section_8" class="bg_pattern"></section>
         <!-- section9 지도 -->

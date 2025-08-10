@@ -235,6 +235,7 @@ section {
             padding: 0.5em;
             border-radius: 50%;
             aspect-ratio: 1;
+            min-height: 1;
             color: #666;
             font-size: 0.9rem;
         }

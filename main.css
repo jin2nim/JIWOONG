@@ -230,6 +230,7 @@ section {
         margin: 0 auto;
         width: 70%;
         text-align: center;
+        justify-content: center;
         div {
             padding: 0.5em;
             border-radius: 50%;

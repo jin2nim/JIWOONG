@@ -19,7 +19,18 @@
     <title>Wedding</title>
 </head>
 <body>
-    <header></header>
+    <!-- 이미지 대문 -->
+    <!-- <div id="loading"></div> -->
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('hide');
+                setTimeout(() => {
+                    document.getElementById('loading').style.display = 'none';
+                }, 2000); // opacity 애니메이션 끝난 뒤 완전히 제거
+            }, 1500); // 로딩 이미지 보여주는 시간
+        });
+    </script>
     <main>
         <!-- section1 메인 비주얼 -->
         <section id="section_1">

@@ -729,3 +729,24 @@ footer {
     }
 }
 
+/* 이미지 대문 */
+#loading {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 720px;
+    background-image: url(./gallery/12.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100%;
+    z-index: 999;
+    opacity: 1;
+    transition: opacity 2s;
+}
+
+#loading.hide {
+    opacity: 0;
+}

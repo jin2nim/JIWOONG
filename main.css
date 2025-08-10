@@ -25,6 +25,7 @@
     text-decoration: none;
     color: #333;
     font-size: 16px;   
+    box-sizing: border-box;
 }
 
 body {
@@ -85,7 +86,7 @@ img {
 }
 .sub_title {
     text-align: center;
-    font-size: 0.825rem;
+    font-size: 1rem;
     letter-spacing: 0.05em;
     position: relative;
 }
@@ -175,7 +176,7 @@ section {
         }
     }
     .border {
-        background-image: url(./img/flower.png);
+        background-image: url(./img/nature.png);
         background-position: center center;
         background-repeat: no-repeat;
         background-size: auto 50px;
@@ -268,14 +269,15 @@ section {
         padding: 30px 20px 20px;
         border: 1px solid #e295a6;
         /* border-radius: 5px; */
-        width: 65%;
+        width: 70%;
         position: relative;   
         p {
             text-align: center;
             font-weight: 600;
             font-size: 1.125rem;
             color: #000;
-            line-height: 1.5;;
+            line-height: 1.5;
+            white-space: nowrap;
         }
         
     }
@@ -401,10 +403,11 @@ section {
     }
 }
 
+/* section6 프로필 */
 #section_6 {
     text-align: center;
-    .title {
-        padding: 80px 0 50px;
+    .sub_title {
+        padding-top: 80px;
     }
     .profile-grid {
         display: grid;
@@ -415,6 +418,7 @@ section {
         gap: 10%;
         p, span {
             font-size: 0.85rem;
+            white-space: nowrap;
         }
         .name {
             font-size: 1.25rem;
@@ -436,11 +440,255 @@ section {
     }
 }
 
+/* section7 장소안내 */
 #section_7 {
+    padding: 100px 0 50px;
+    text-align: center;
+    .sub_title {
+        margin-top: 50px;
+    }
+    .tab_container {
+        width: 80%;
+        margin: 50px auto;
+        input[type="radio"] {
+            display: none;
+        }
+        .tab-header {
+            display: flex;
+            gap: 10px;
+            label {
+                flex: 1;
+                text-align: center;
+                padding: 10px 0;
+                cursor: pointer;
+                transition: 0.2s;
+                border-bottom: 2px dotted #e295a6;
+                font-size: 0.825rem;
+            }
+            label:hover{
+                color: #e295a6;
+            }
+        }
+
+        #tab1:checked ~ .tab-header label[for="tab1"],
+        #tab2:checked ~ .tab-header label[for="tab2"],
+        #tab3:checked ~ .tab-header label[for="tab3"] {
+            font-weight: bold;
+            color: #e295a6;
+        }
+
+        .tab-content {
+            margin-top: 20px;
+            display: none;
+            p {
+                text-align: left;
+                font-size: 0.825rem;
+                margin-top: 16px;
+                font-family: "Noto Sans KR", sans-serif;
+            }
+        }
+
+        #tab1:checked ~ .tab-content.content1,
+        #tab2:checked ~ .tab-content.content2,
+        #tab3:checked ~ .tab-content.content3 {
+            display: block;
+        }
+    }
+}
+
+/* section8 지도 */
+#section_8 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .sub_title {
+        padding: 80px 0 50px;
+    }
+    .address {
+        text-align: center;
+        line-height: 1.8rem;
+    }
+    .copy {
+        border: none;
+        background-color: #fff;
+        color: #666;
+        padding: 8px;
+        margin: 20px auto 50px;
+        border-radius: 5px;
+        display: block;
+        font-size: 0.825rem;
+    }
+    #map {
+        width: 80%;
+        margin: 0 auto;
+        height: 300px;
+    }
+    .quick-map {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        gap: 2%;
+        background-color: #fff;
+        margin-top: 20px;
+        border-radius: 10px;
+        align-items: center;
+        .quick-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 33.333%;
+            padding: 10px 0;
+            img {
+                width: 16px;
+                height: 16px;
+                margin: 0;
+            }
+            p {
+                font-family: "Noto Sans KR", sans-serif; 
+                font-size: 0.825rem;
+                margin: 0;
+                margin-left: 8px;
+            }
+        }
+        .line {
+            width: 1px;
+            height: 20px;
+            background-color: #7aaac7;
+        }
+    }
+
+    .description {
+        width: 80%;
+        margin: 50px auto 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        div, p {
+            margin: 0;
+        }
+        .d-header {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 10px 5px;
+            border-bottom: 1px dotted #7aaac7;
+            
+            .img-wrap {
+                width: 32px;
+                height: 32px;
+                background-color: #fff;
+                border-radius: 100%;
+                border: 1px solid #dedede;
+                padding: 4px;
+            }
+        }
+        .d-content {
+            padding: 20px 0;
+            li {
+                list-style: none;
+                margin-bottom: 4px;
+                strong {
+                    color: red;
+                }
+                small {
+                    font-size: 0.825rem;
+                }
+            }
+        }
+    }
+}
+
+/* section9 계좌번호 */
+#section_9 {
     padding: 100px 0;
     .main_text {
         padding: 50px 0;
         text-align: center;
         line-height: 1.8;
+    }
+
+    .account {
+        width: 80%;
+        margin: 0 auto;
+
+        .accordion-header {
+            display: flex;
+            width: 100%;
+            /* height: 40px; */
+            padding: 10px;
+            /* background-color: yellow; */
+            justify-content: center;
+            align-items: center;
+            p {
+                white-space: nowrap;
+                width: 100%;
+                padding-left: 10px;
+            }
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        .accordion-content {
+            width: 100%;
+            display: none;
+            .account-list {
+                padding: 10px;
+                margin-top: -1px;
+                .account-num, .action {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 2%;
+                    p, span {
+                        margin: 0;
+                        font-size: 0.825rem;
+                    }
+                    b {
+                        font-size: 0.9rem;
+                    }
+                }
+                .action a{
+                    border: none;
+                    width: 48%;
+                    background-color: transparent;
+                    margin-top: 10px;
+                    font-size: 0.9rem;
+                    white-space: nowrap;
+                    display: flex;
+                    .img-area {
+                        width: 30%;
+                        height: 100%;
+                        background-color: yellow;
+                    }
+                }
+            }
+        }
+        .left {
+            float: left;
+        }
+        .right {
+            float: right;
+        }
+        .bloom {
+            .accordion-header {
+                background-color: rgba(168,203,230,0.25);
+                border: 1px solid #7aaac7;
+            }
+            .account-list {
+                border: 1px solid #7aaac7 !important;
+            }
+        }
+        .bride {
+            margin-top: 20px;
+            .accordion-header {
+                background-color: rgba(226,149,166,0.25);
+                border: 1px solid #e295a6;
+            }
+            .account-list {
+                border: 1px solid #e295a6;
+            }
+        }
     }
 }

@@ -11,7 +11,8 @@
     <!-- masonry.js --- for gallery -->
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-
+    <!-- naver maps -->
+    <script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=4y5miz5oxb"></script>                
     <!-- stylesheet -->
     <link rel="stylesheet" href="main.css">
     <!-- LightGallery CSS -->
@@ -24,7 +25,7 @@
     <main>
         <!-- section1 메인 비주얼 -->
         <section id="section_1">
-            <img src="./img/main_visual_2.png" alt="main_visual">
+            <img src="./img/main_visual.png" alt="main_visual">
             <div class="grid_area">
                 <div class="text_area">
                     <p><span class="font_big">2025. 10. 25</span> 12:00 PM
@@ -58,7 +59,7 @@
                         <span class="text_blue">동</span>화처럼 시작된 우리의 시작이
                         <br><span class="text_blue">훈</span>풍처럼 따뜻한 시간을 지나
                         <br><span class="text_pink">하</span>루하루 쌓인 마음이 사랑이 되어
-                        <br><span class="text_pink">림</span>루하루 쌓인 마음이 사랑이 되어
+                        <br>그<span class="text_pink">림</span>같이 예쁜 부부가 되려합니다.
                         <br><br>
                         저희 두 사람, 결혼합니다.
                     </p>
@@ -212,6 +213,9 @@
                 <a href="./gallery/19.jpg">
                     <img src="./gallery/s_19.jpg">
                 </a>
+                <a href="./gallery/20.jpg">
+                    <img src="./gallery/s_20.jpg">
+                </a>
             </div>
             <div class="more-btn">
                 <button id="moreBtn" class="noto-sans">사진 더 보기</button>
@@ -257,57 +261,353 @@
                 });
             </script>
         </section>
-        <!-- section6 연락처 -->
+        <!-- section6 프로필 -->
         <section id="section_6">
             <div class="pattern pattern_top "></div>
             <div class="bg_pattern">
-                <h5 class="title">Contact Us</h5>
+                <!-- <h5 class="title">Contact Us</h5> -->
                 <p class="sub_title">Our Profile</p>
                 <div class="profile-grid noto-sans">
                     <div class="bloom">
                         <img src="./img/profile_bloom.png" alt="신랑 사진">
                         <p class="name"><span class="text_blue">신랑</span> 유동훈</p>
                         <div class="character">
-                            <p>MBTI,</p>
-                            <p>피아노 전공</p>
-                            <p>성격성셕세심다정??</p>
+                            <p>ENFP</p>
+                            <p>다정하고 세심한 듬직이</p>
+                            <p>취미 : 설거지, 분리수거</p>
                         </div>
                         <div class="border">
                             <svg fill="#a8d0e6" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 C2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09 C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5 c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>
                         </div>
-                        <p>너마눌사랑해</p>
+                        <p>"남편만 믿고 따라와!"
+                            <br>&nbsp;
+                        </p>
                     </div>
                     <div class="bride">
                         <img src="./img/profile_bride.png" alt="신부 사진">
                         <p class="name"><span class="text_pink">신부</span> 정하림</p>
                         <div class="character">
-                            <p>MBTI,</p>
-                            <p>영상 전공</p>
-                            <p>성격성셕세심다정??</p>
+                            <p>INFJ</p>
+                            <p>성실,책임감 MAX 똑순이</p>
+                            <p>취미 : 유동훈 예뻐하기</p>
                         </div>
                         <div class="border">
                             <svg fill="#e295a6" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 C2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09 C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5 c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>
                         </div>
-                        <p>너마눌사랑해</p>
+                        <p>"동훈아 그쪽 아니야, 
+                            <br>이리와~"</p>
                     </div>
                 </div>
             </div>
             <div class="pattern pattern_bottom"></div>
         </section>
-        <!-- section7 계좌번호 -->
+
+        <!-- section7 장소안내 -->
         <section id="section_7" class="bg_gray">
+            <h5 class="title">Location</h5>
+            <p class="sub_title">식장 정보 안내</p>
+            <div class="tab_container">
+                <input type="radio" name="tab" id="tab1" checked>
+                <input type="radio" name="tab" id="tab2">
+                <input type="radio" name="tab" id="tab3">            
+                <div class="tab-header">
+                    <label for="tab1">Venue</label>
+                    <label for="tab2">Parking</label>
+                    <label for="tab3">and More</label>
+                </div>
+                <div class="tab-content content1">
+                    <img src="./img/grandballroomhall.jpg" alt="홀사진">
+                    <p>
+                        신랑, 신부의 예식이 이루어지는 그랜드볼룸홀과 신부대기실은 <b>"3층"</b>에 위치해 있습니다. 
+                    </p>
+                </div>
+                <div class="tab-content content2">
+                    <img src="./img/parking.jpg" alt="주차안내">
+                    <p>
+                        자차를 이용하시는 경우 <b>KT빌딩 주차장</b>을 이용바랍니다. 주차요원의 안내를 받으세요.
+                    </p>
+                </div>
+                <div class="tab-content content3">
+                    <img src="./img/3F_terrace.jpg" alt="부대시설">
+                    <p>예식 시간 전, 후로 <b>1층의 커피숍</b>과 <b>3층의 테라스</b>를 이용하실 수 있습니다.</p>
+                </div>
+            </div>
+        </section>
+        <!-- section8 지도 -->
+        <section id="section_8">
+            <div class="pattern pattern_top "></div>
+            <div class="bg_pattern">
+                <!-- <h5 class="title">Contact Us</h5> -->
+                <p class="sub_title">오시는 길</p>
+                <p class="address">
+                    서울특별시 영등포구 여의대로 14
+                    <br>KT빌딩 (여의도동 28-2)
+                    <br>여의도웨딩컨벤션
+                </p>
+                <button class="copy noto-sans">주소 복사하기</button>
+                <!-- 주소 복사 -->
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        const copyBtn = document.querySelector(".copy");
+                        const addressElem = document.querySelector(".address");
+
+                        copyBtn.addEventListener("click", function () {
+                        // p.address 요소의 텍스트 전체를 복사 (줄바꿈 포함)
+                        const textToCopy = addressElem.innerText.trim();
+
+                        navigator.clipboard.writeText(textToCopy).then(() => {
+                            alert("주소가 복사되었습니다!");
+                        }).catch(err => {
+                            alert("복사에 실패했습니다.");
+                            console.error(err);
+                        });
+                        });
+                    });
+                </script>
+                <div id="map"></div>
+                <!-- 지도 호출 -->
+                <script>
+                    // 지도 생성
+                    var map = new naver.maps.Map('map', {
+                        center: new naver.maps.LatLng(37.5216459, 126.9191366), // 초기 좌표 (서울시청)
+                        zoom: 14
+                    });
+
+                    // 마커 생성
+                    var marker = new naver.maps.Marker({
+                        position: new naver.maps.LatLng(37.5216459, 126.9191366),
+                        map: map
+                    });
+                </script>
+                <!-- 네비게이션 버튼 -->
+                <div class="quick-map">
+                    <a href="https://map.naver.com/p/entry/place/11865877?c=17.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202508100018&locale=ko&svcName=map_pcv5" class="quick-btn">
+                        <img src="./img/navermap1.jpeg" alt="네이버지도">
+                        <p>네이버지도</p>
+                    </a>
+                    <div class="line"></div>
+                    <a href="https://map.kakao.com/?map_type=TYPE_MAP&target=car&rt=,,482137,1117322&rt1=&rt2=여의도웨딩컨벤션&rtIds=,&rtTypes=," target="_blank" class="quick-btn">
+                        <img src="./img/kakaonavi1.jpeg" alt="카카오네비">
+                        <p>카카오네비</p>
+                    </a>
+                    <div class="line"></div>
+                    <a href="https://tmap.life/67565e02" class="quick-btn">
+                        <img src="./img/tmap1.jpeg" alt="티맵">
+                        <p>티맵</p>
+                    </a>
+                </div>
+                <!-- 설명 -->
+                <div class="description">
+                    <div class="d-item">
+                        <div class="d-header">
+                            <div class="img-wrap">                            
+                                <img src="./img/subway.png" alt="지하철">
+                            </div>
+                            <p>지하철 Subway</p>
+                        </div>
+                        <ul class="d-content noto-sans">
+                            <li><b>여의도역 1번 출구</b> 500m 도보 8분 거리</li>
+                            <li><small>- 하나증권(하나은행) 건물 사이로 들어오셔서 주차장 입구로 나오신 후 위를 보시면 Marriott와 KT빌딩이 보입니다. 웨딩홀은 KT빌딩 3층입니다.</small></li>
+                            <li style="margin-top: 10px;"><strong>※ 여의도역 2번 출구는 21.07.05 ~ (미정) 공사 종료시까지 폐쇄됩니다.</strong></li>
+                        </ul>
+                    </div>
+                    <div class="d-item">
+                        <div class="d-header">
+                            <div class="img-wrap">                            
+                                <img src="./img/bus.png" alt="버스">
+                            </div>
+                            <p>버스 Bus</p>
+                        </div>
+                        <ul class="d-content noto-sans">
+                            <li><b>한국경제인협회 정류장 하차
+                                <br>(정류장번호 : 19161)</b>
+                            </li>
+                            <li><small>- 신도림역 출발: 600, 662, 5615, 6633</small></li>
+                            <li><small>- 대림역 출발: 5618</small></li>
+                            <li><small>- 서울역환승센터 출발: 162, 503</small></li>
+                            <li><small>- 안양종합운동장 출발: 5713</small></li>
+                            <li><small>- 영등포시장 출발: 5021</small></li>
+                            <li><small>- 영등포역 출발: 160, 503, 600, 662, 5615, 5618, 6628, 10, 11-1, 11-2, 83, 88</small></li>
+                            <li><small>- 신길역 출발: 360</small></li>
+                            <li><small>- 광역버스 부천 700번 / 안산 301, 320번 / 시흥 530번</small></li>
+                        </ul>
+                    </div>
+                    <div class="d-item">
+                        <div class="d-header">
+                            <div class="img-wrap">                            
+                                <img src="./img/car.png" alt="자가용">
+                            </div>
+                            <p>자가용 Car</p>
+                        </div>
+                        <ul class="d-content noto-sans">
+                            <li><b>[네비게이션]</b> </li>
+                            <li>"여의도웨딩컨벤션" 또는 "여의도 KT" 또는 "여의대로 14" 입력</li>
+                            <li><b>[주차장 안내]</b></li>
+                            <li>KT빌딩 주차장 이용, 주차요원의 안내를 받으세요.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="pattern pattern_bottom"></div>
+        </section>
+        <!-- section9 계좌번호 -->
+        <section id="section_9" class="bg_gray">
             <p class="sub_title">축하의 마음 전하기</p>
             <p class="main_text">
                 저희 두 사람의 소중한 시작을
                 <br>함께해 주시는 모든 분들께 감사드리며,
-                <br>전해주시는 따듯한 진심을 배워
+                <br>전해주시는 따듯한 마음 기억하며
                 <br>오래도록 행복하게 잘 살겠습니다.   
             </p>
+            <div class="account noto-sans">
+                <!-- 신랑측 마음 전하실 곳 -->
+                <div class="accordian bloom">
+                    <div class="accordion-header">
+                        <img src="./img/nature.png" alt="flower" class="left">
+                        <p class="left">신랑 측 마음 전하실 곳</p>
+                        <img src="./img/allow.svg" alt="down-btn" class="right">
+                    </div>
+                    <div class="accordion-content">
+                        <div class="account-list">
+                            <div class="account-num">
+                                <p><b>경남은행 </b><span>221-0028-3571-05</span></p>
+                                <p>아버지 <b>유진호</b></p>
+                            </div>
+                            <div class="action">
+                                <a class="copy">
+                                    <img src="./img/account_copy.png" alt="계좌번호 복사하기">
+                                </a>
+                                <a class="kakao">
+                                    <!-- <img src="./img/kakao.png" alt="카카오 송금하기"> -->
+                                </a>
+                            </div>
+                        </div>
+                        <div class="account-list">
+                            <div class="account-num">
+                                <p><b>농협은행 </b><span>899-12-139945</span></p>
+                                <p>어머니 <b>곽일심</b></p>
+                            </div>
+                            <div class="action">
+                                <a class="copy">
+                                    <img src="./img/account_copy.png" alt="계좌번호 복사하기">
+                                </a>
+                                <a class="kakao">
+                                    <!-- <img src="./img/kakao.png" alt="카카오 송금하기"> -->
+                                </a>
+                            </div>
+                        </div>
+                        <div class="account-list">
+                            <div class="account-num">
+                                <p><b>신한은행 </b><span>110-412-649508</span></p>
+                                <p>신랑 <b>유동훈</b></p>
+                            </div>
+                            <div class="action">
+                                <a class="copy">
+                                    <img src="./img/account_copy.png" alt="계좌번호 복사하기">
+                                </a>
+                                <a href="https://qr.kakaopay.com/Ej8FsplNW" class="kakao">
+                                    <img src="./img/kakao.png" alt="카카오 송금하기">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 신부측 마음 전하실 곳 -->
+                 <div class="accordian bride">
+                    <div class="accordion-header">
+                        <img src="./img/nature.png" alt="flower" class="left">
+                        <p class="left">신부 측 마음 전하실 곳</p>
+                        <img src="./img/allow.svg" alt="down-btn" class="right">
+                    </div>
+                    <div class="accordion-content">
+                        <div class="account-list">
+                            <div class="account-num">
+                                <p><b>농협은행 </b><span>204026-52-114590</span></p>
+                                <p>아버지 <b>정일영</b></p>
+                            </div>
+                            <div class="action">
+                                <a class="copy">
+                                    <img src="./img/account_copy.png" alt="계좌번호 복사하기">
+                                </a>
+                                <a class="kakao">
+                                    <!-- <img src="./img/kakao.png" alt="카카오 송금하기"> -->
+                                </a>
+                            </div>
+                        </div>
+                        <div class="account-list">
+                            <div class="account-num">
+                                <p><b>국민은행 </b><span>659402-01-135592</span></p>
+                                <p>어머니 <b>유영옥</b></p>
+                            </div>
+                            <div class="action">
+                                <a class="copy">
+                                    <img src="./img/account_copy.png" alt="계좌번호 복사하기">
+                                </a>
+                                <a class="kakao">
+                                    <!-- <img src="./img/kakao.png" alt="카카오 송금하기"> -->
+                                </a>
+                            </div>
+                        </div>
+                        <div class="account-list">
+                            <div class="account-num">
+                                <p><b>신한은행 </b><span>110-390-734850</span></p>
+                                <p>신부 <b>정하림</b></p>
+                            </div>
+                            <div class="action">
+                                <a class="copy">
+                                    <img src="./img/account_copy.png" alt="계좌번호 복사하기">
+                                </a>
+                                <a href="https://qr.kakaopay.com/Ej8EwEY1A" class="kakao">
+                                    <img src="./img/kakao.png" alt="카카오 송금하기">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const headers = document.querySelectorAll(".accordion-header");
+
+                    headers.forEach(header => {
+                        header.addEventListener("click", function () {
+                            const content = this.nextElementSibling;
+                            const isOpen = content.style.display === "block";
+                            content.style.display = isOpen ? "none" : "block";
+                        });
+                    });
+
+                    // 복사 버튼들 선택
+                    const copyButtons = document.querySelectorAll(".copy");
+
+                    copyButtons.forEach(button => {
+                        button.addEventListener("click", function (e) {
+                            e.preventDefault();
+
+                            // 클릭한 복사 버튼의 가장 가까운 .account-list를 찾음
+                            const accountList = this.closest(".account-list");
+                            if (!accountList) return;
+
+                            // 그 안에서 .account-num 의 span요소를 찾음
+                            const accountNum = accountList.querySelector(".account-num span");
+                            if (!accountNum) return;
+
+                            // .account-num 안의 텍스트 가져오기 (공백 정리)
+                            const textToCopy = accountNum.innerText.trim();
+
+                            // 클립보드에 복사
+                            navigator.clipboard.writeText(textToCopy).then(() => {
+                                alert("계좌번호가 복사되었습니다!");
+                            }).catch(err => {
+                                alert("복사에 실패했습니다.");
+                                console.error(err);
+                            });
+                        });
+                    });
+                });
+
+            </script>
         </section>
-        <!-- section8 장소안내 -->
-        <section id="section_8" class="bg_pattern"></section>
-        <!-- section9 지도 -->
-        <section id="section_9"></section>
     </main>
     <footer></footer>
     <!-- LightGallery JS -->

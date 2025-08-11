@@ -696,6 +696,7 @@ section {
 
 footer {
     width: 100%;
+    max-width: 720px;
     height: 200px;
     background-image: url(./gallery/18.jpg);
     background-size: cover;
@@ -716,7 +717,7 @@ footer {
             padding-top: 30px;
             font-size: 0.7rem;
         }
-        p {
+        p, b {
             color: #fff;
             text-align: center;
             width: 70%;
@@ -725,6 +726,7 @@ footer {
         .copyright {
             font-size: 0.7rem;
             opacity: 0.7;
+            width: 100%;
         }
     }
 }

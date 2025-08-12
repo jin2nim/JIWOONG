@@ -674,13 +674,16 @@
         <audio id="bgm" loop>
             <source src="./music/Ed Sheeran - Photograph (Lyrics).mp3" type="audio/mpeg">
         </audio>
+        <button id="bgm-toggle">
+            <img src="./img/pause.png" alt="일시정지">
+        </button>
     </div>
 
-    <!-- 스크롤 발생 시 자동재생 -->
+    <!-- 음악 자동재생 및 버튼 숨김 -->
     <script>
     document.addEventListener("DOMContentLoaded", () => {
         const audio = document.getElementById('bgm');
-
+        const toggleBtn = document.getElementById('bgm-toggle');
         // 자동재생 시도
         audio.play().catch(() => {
             console.log("자동재생 실패. 사용자 이벤트 대기 중...");
@@ -696,6 +699,33 @@
             document.addEventListener('scroll', startMusic);
             document.addEventListener('click', startMusic);
             document.addEventListener('touchstart', startMusic);
+        });
+
+        // 재생 & 일시정지
+        const playIcon = './img/play.png';
+        const pauseIcon = './img/pause.png';
+        toggleBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                toggleBtn.innerHTML = `<img src="${pauseIcon}" alt="일시정지">`;
+            } else {
+                audio.pause();
+                toggleBtn.innerHTML = `<img src="${playIcon}" alt="재생">`
+            }
+        })
+
+        // 버튼 자동 숨김 & 노출
+        let hideTimer;
+
+        const showButton = () => {
+            toggleBtn.style.opacity = '1';
+            clearTimeout(hideTimer);
+            hideTimer = setTimeout(()=>{
+                toggleBtn.style.opacity = '0';
+            }, 1000);
+        }
+        ['scroll', 'click', 'mousemove', 'touchstart'].forEach(event => {
+            document.addEventListener(event, showButton);
         });
     });
     </script>

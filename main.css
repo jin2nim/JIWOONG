@@ -26,6 +26,7 @@
     color: #333;
     font-size: 16px;   
     box-sizing: border-box;
+    word-break: keep-all;
 }
 
 body {
@@ -739,15 +740,33 @@ footer {
     transform: translateX(-50%);
     width: 100%;
     max-width: 720px;
-    background-image: url(./gallery/12.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
     height: 100%;
     z-index: 999;
     opacity: 1;
     transition: opacity 2s;
+    background-color: #fad4ef;
+    /* 배경을 이미지로 할 경우 */
+    /* background-image: url(./gallery/12.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    p {
+        color: #fff;
+        font-family: "Hi Melody", sans-serif;
+    }
 }
+
+.hi-melody-regular {
+  font-family: "Hi Melody", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 #loading.hide {
     opacity: 0;

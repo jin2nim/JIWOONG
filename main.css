@@ -514,11 +514,11 @@ section {
         border: none;
         background-color: #fff;
         color: #666;
-        padding: 8px;
+        padding: 6px;
         margin: 20px auto 50px;
         border-radius: 5px;
         display: block;
-        font-size: 0.825rem;
+        font-size: 0.75rem;
     }
     #map {
         width: 80%;
@@ -539,7 +539,7 @@ section {
             justify-content: center;
             align-items: center;
             width: 33.333%;
-            padding: 10px 0;
+            padding: 10px;
             img {
                 width: 16px;
                 height: 16px;
@@ -547,7 +547,7 @@ section {
             }
             p {
                 font-family: "Noto Sans KR", sans-serif; 
-                font-size: 0.825rem;
+                font-size: 0.75rem;
                 margin: 0;
                 margin-left: 8px;
             }
@@ -607,6 +607,8 @@ section {
         padding: 50px 0;
         text-align: center;
         line-height: 1.8;
+        font-size: 0.825rem;
+        width: 90%;
     }
 
     .account {
@@ -639,7 +641,7 @@ section {
             .account-list {
                 padding: 16px 10px;
                 margin-top: -1px;
-                .account-num, .action {
+                .account-num {
                     display: flex;
                     justify-content: space-between;
                     gap: 2%;
@@ -651,20 +653,44 @@ section {
                         font-size: 0.9rem;
                     }
                 }
-                .action a{
-                    border: none;
-                    width: 48%;
-                    background-color: transparent;
-                    margin-top: 10px;
-                    font-size: 0.9rem;
-                    white-space: nowrap;
+                .action {
                     display: flex;
-                    .img-area {
-                        width: 30%;
-                        height: 100%;
-                        background-color: yellow;
+                    justify-content: space-between;
+                    gap: 2%;
+                    align-items: center;
+                    a {
+                        border: none;
+                        width: 48%;
+                        background-color: transparent;
+                        margin-top: 10px;
+                        font-size: 0.9rem;
+                        white-space: nowrap;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        border-radius: 6px;
+                        padding: 6px;
+                        img {
+                            height: 16px;
+                            width: auto;
+                            margin: 0;
+                        }
+                        p {
+                            font-size: 0.75rem;
+                            margin: 0;
+                        }
+                    }
+                    .copy {
+                        background-color: #fff;
+                    }
+                    .kakao {
+                        background-color: #fee500;
+                        img {
+                            padding: 1px;
+                        }
                     }
                 }
+                
             }
         }
         .left {
@@ -733,6 +759,27 @@ footer {
 }
 
 /* 이미지 대문 */
+
+
+/* intro 폰트 후보 */
+.meddon-regular {
+  font-family: "Meddon", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.homemade-apple-regular {
+  font-family: "Homemade Apple", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+    font-family: 'Ballet';
+    src: url('./font/Ballet_Harmony.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 #loading {
     position: fixed;
     top: 0;
@@ -744,7 +791,7 @@ footer {
     z-index: 999;
     opacity: 1;
     transition: opacity 2s;
-    background-color: #fad4ef;
+    background-color: #efe5ee;
     /* 배경을 이미지로 할 경우 */
     /* background-image: url(./gallery/12.jpg);
     background-repeat: no-repeat;
@@ -756,15 +803,13 @@ footer {
     align-items: center;
     text-align: center;
     p {
-        color: #fff;
-        font-family: "Hi Melody", sans-serif;
+        color: #e295a6;
+        font-family: "Ballet", cursive;
+        font-size: 2.5rem;
     }
-}
-
-.hi-melody-regular {
-  font-family: "Hi Melody", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    .p-big {
+        font-size: 3.5rem;
+    }
 }
 
 

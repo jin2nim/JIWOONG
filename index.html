@@ -7,7 +7,7 @@
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Hi+Melody&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Hi+Melody&family=Homemade+Apple&family=Leckerli+One&family=Meddon&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
     <!-- masonry.js --- for gallery -->
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
@@ -26,39 +26,41 @@
 </head>
 <body>
     <!-- Intro 대문 -->
-    <!-- <div id="loading">
-        <p id="typing-text">
-        </p>
-    </div> -->
+    <div id="loading">
+        <p id="typing-text1"></p>
+        <p class="p-big" id="typing-text2"></p>
+    </div>
     <script>
         window.addEventListener('load', () => {
-            const text = "동훈이랑 ♥ 하림이랑 결혼하는 날\n2025년 10월 25일 낮 12시"; 
-            const typingElement = document.getElementById('typing-text');
-            let index = 0;
+            function typeText(text, elementId, delay, callback) {
+                const el = document.getElementById(elementId);
+                let index = 0;
+                const interval = setInterval(() => {
+                    if (text[index] === "\n") {
+                        el.innerHTML += "<br>";
+                    } else {
+                        el.innerHTML += text[index];
+                    }
+                    index++;
+                    if (index >= text.length) {
+                        clearInterval(interval);
+                        if (callback) callback();
+                    }
+                }, delay);
+            }
 
-            // 타이핑 효과
-            const typingInterval = setInterval(() => {
-                // \n이면 <br>로 변환
-                if (text[index] === "\n") {
-                    typingElement.innerHTML += "<br>";
-                } else {
-                    typingElement.innerHTML += text[index];
-                }
-                index++;
-
-                if (index >= text.length) {
-                    clearInterval(typingInterval);
-                }
-            }, 100); // 글자 간격(ms)
-
-            // 로딩 사라지는 타이밍
-            setTimeout(() => {
-                document.getElementById('loading').classList.add('hide');
-                setTimeout(() => {
-                    document.getElementById('loading').style.display = 'none';
-                }, 2000);
-            }, 1500 + text.length * 100); 
-            // 타이핑 끝난 후 로딩 제거
+            typeText("We're getting", "typing-text1", 100, () => {
+                typeText("married", "typing-text2", 100, () => {
+                    // 모든 타이핑 끝난 후 로딩 제거
+                    setTimeout(() => {
+                        const loading = document.getElementById('loading');
+                        loading.classList.add('hide');
+                        setTimeout(() => {
+                            loading.style.display = 'none';
+                        }, 2000); // fade out 후 제거
+                    }, 1500); // 타이핑 끝나고 잠시 대기
+                });
+            });
         });
     </script>
     <main>
@@ -361,7 +363,7 @@
                 <div class="tab-header">
                     <label for="tab1">Venue</label>
                     <label for="tab2">Parking</label>
-                    <label for="tab3">and More</label>
+                    <label for="tab3">More</label>
                 </div>
                 <div class="tab-content content1">
                     <img src="./img/grandballroomhall.jpg" alt="홀사진">
@@ -372,12 +374,12 @@
                 <div class="tab-content content2">
                     <img src="./img/parking.jpg" alt="주차안내">
                     <p>
-                        자차를 이용하시는 경우 <b>KT빌딩 주차장</b>을 이용바랍니다. 주차요원의 안내를 받으세요.
+                        자차를 이용하시는 경우 <b>KT빌딩 주차장</b>을 이용 바랍니다. 주차요원의 안내를 받으세요.
                     </p>
                 </div>
                 <div class="tab-content content3">
                     <img src="./img/3F_terrace.jpg" alt="부대시설">
-                    <p>예식 시간 전, 후로 <b>1층의 커피숍</b>과 <b>3층의 테라스</b>를 이용하실 수 있습니다.</p>
+                    <p>예식 시간 전, 후로 <b>1층 커피숍</b>과 <b>3층 테라스</b>를 이용 하실 수 있습니다.</p>
                 </div>
             </div>
         </section>
@@ -525,11 +527,10 @@
                             </div>
                             <div class="action">
                                 <a class="copy">
-                                    <img src="./img/account_copy.png" alt="계좌번호 복사하기">
+                                    <img src="./img/copy.png" alt="복사">
+                                    <p>계좌번호 복사</p>
                                 </a>
-                                <a class="kakao">
-                                    <!-- <img src="./img/kakao.png" alt="카카오 송금하기"> -->
-                                </a>
+                                <a></a>
                             </div>
                         </div>
                         <div class="account-list">
@@ -539,11 +540,10 @@
                             </div>
                             <div class="action">
                                 <a class="copy">
-                                    <img src="./img/account_copy.png" alt="계좌번호 복사하기">
+                                    <img src="./img/copy.png" alt="복사">
+                                    <p>계좌번호 복사</p>
                                 </a>
-                                <a class="kakao">
-                                    <!-- <img src="./img/kakao.png" alt="카카오 송금하기"> -->
-                                </a>
+                                <a></a>
                             </div>
                         </div>
                         <div class="account-list">
@@ -553,10 +553,12 @@
                             </div>
                             <div class="action">
                                 <a class="copy">
-                                    <img src="./img/account_copy.png" alt="계좌번호 복사하기">
+                                    <img src="./img/copy.png" alt="복사">
+                                    <p>계좌번호 복사</p>
                                 </a>
                                 <a href="https://qr.kakaopay.com/Ej8FsplNW" class="kakao">
-                                    <img src="./img/kakao.png" alt="카카오 송금하기">
+                                    <img src="./img/KakaoPay.png" alt="복사">
+                                    <p>카카오 송금</p>
                                 </a>
                             </div>
                         </div>
@@ -577,11 +579,10 @@
                             </div>
                             <div class="action">
                                 <a class="copy">
-                                    <img src="./img/account_copy.png" alt="계좌번호 복사하기">
+                                    <img src="./img/copy.png" alt="복사">
+                                    <p>계좌번호 복사</p>
                                 </a>
-                                <a class="kakao">
-                                    <!-- <img src="./img/kakao.png" alt="카카오 송금하기"> -->
-                                </a>
+                                <a></a>
                             </div>
                         </div>
                         <div class="account-list">
@@ -591,11 +592,10 @@
                             </div>
                             <div class="action">
                                 <a class="copy">
-                                    <img src="./img/account_copy.png" alt="계좌번호 복사하기">
+                                    <img src="./img/copy.png" alt="복사">
+                                    <p>계좌번호 복사</p>
                                 </a>
-                                <a class="kakao">
-                                    <!-- <img src="./img/kakao.png" alt="카카오 송금하기"> -->
-                                </a>
+                                <a></a>
                             </div>
                         </div>
                         <div class="account-list">
@@ -605,10 +605,12 @@
                             </div>
                             <div class="action">
                                 <a class="copy">
-                                    <img src="./img/account_copy.png" alt="계좌번호 복사하기">
+                                    <img src="./img/copy.png" alt="복사">
+                                    <p>계좌번호 복사</p>
                                 </a>
                                 <a href="https://qr.kakaopay.com/Ej8EwEY1A" class="kakao">
-                                    <img src="./img/kakao.png" alt="카카오 송금하기">
+                                    <img src="./img/KakaoPay.png" alt="복사">
+                                    <p>카카오 송금</p>
                                 </a>
                             </div>
                         </div>
@@ -675,7 +677,7 @@
             <source src="./music/Ed Sheeran - Photograph (Lyrics).mp3" type="audio/mpeg">
         </audio>
         <button id="bgm-toggle">
-            <img src="./img/pause.png" alt="일시정지">
+            <img src="./img/play.png" alt="일시정지">
         </button>
     </div>
 
@@ -707,10 +709,10 @@
         toggleBtn.addEventListener('click', () => {
             if (audio.paused) {
                 audio.play();
-                toggleBtn.innerHTML = `<img src="${pauseIcon}" alt="일시정지">`;
+                toggleBtn.innerHTML = `<img src="${playIcon}" alt="재생">`;
             } else {
                 audio.pause();
-                toggleBtn.innerHTML = `<img src="${playIcon}" alt="재생">`
+                toggleBtn.innerHTML = `<img src="${pauseIcon}" alt="일시정지">`
             }
         })
 

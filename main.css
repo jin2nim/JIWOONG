@@ -24,7 +24,7 @@
     padding: 0;
     text-decoration: none;
     color: #333;
-    font-size: 16px;   
+    /* font-size: 16px;    */
     box-sizing: border-box;
     word-break: keep-all;
 }
@@ -486,6 +486,7 @@ section {
                 font-size: 0.825rem;
                 margin-top: 16px;
                 font-family: "Noto Sans KR", sans-serif;
+                word-break: auto-phrase;
             }
         }
 
@@ -550,6 +551,7 @@ section {
                 font-size: 0.75rem;
                 margin: 0;
                 margin-left: 8px;
+                white-space: nowrap;
             }
         }
         .line {
@@ -645,12 +647,44 @@ section {
                     display: flex;
                     justify-content: space-between;
                     gap: 2%;
+                    align-items: center;
                     p, span {
                         margin: 0;
                         font-size: 0.825rem;
+                        white-space: nowrap;
                     }
                     b {
                         font-size: 0.9rem;
+                    }
+                    a {
+                        border: none;
+                        width: 48%;
+                        background-color: transparent;
+                        margin: 0;
+                        font-size: 0.9rem;
+                        white-space: nowrap;
+                        display: flex;
+                        float: right;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        border-radius: 6px;
+                        padding: 6px;
+                        width: 4.5em;
+                        img {
+                            height: 16px;
+                            width: auto;
+                            margin: 0;
+                        }
+                        p {
+                            font-size: 0.75rem;
+                            margin: 0;
+                        }
+                    }
+                    .kakao {
+                        background-color: #fee500;
+                        img {
+                            padding: 1px;
+                        }
                     }
                 }
                 .action {
@@ -658,18 +692,26 @@ section {
                     justify-content: space-between;
                     gap: 2%;
                     align-items: center;
+                    margin-top: 5px;
+                    p, span {
+                        margin: 0;
+                        font-size: 0.9rem;
+                        white-space: nowrap;
+                    }
                     a {
                         border: none;
                         width: 48%;
                         background-color: transparent;
-                        margin-top: 10px;
+                        margin: 0;
                         font-size: 0.9rem;
                         white-space: nowrap;
                         display: flex;
+                        float: right;
                         align-items: center;
                         justify-content: space-evenly;
                         border-radius: 6px;
                         padding: 6px;
+                        width: 4.5em;
                         img {
                             height: 16px;
                             width: auto;
@@ -762,21 +804,20 @@ footer {
 
 
 /* intro 폰트 후보 */
-.meddon-regular {
-  font-family: "Meddon", cursive;
+.covered-by-your-grace-regular {
+  font-family: "Covered By Your Grace", cursive;
   font-weight: 400;
   font-style: normal;
 }
-.homemade-apple-regular {
-  font-family: "Homemade Apple", cursive;
+.gloria-hallelujah-regular {
+  font-family: "Gloria Hallelujah", cursive;
   font-weight: 400;
   font-style: normal;
 }
-@font-face {
-    font-family: 'Ballet';
-    src: url('./font/Ballet_Harmony.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+.rock-salt-regular {
+  font-family: "Rock Salt", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 
@@ -804,11 +845,11 @@ footer {
     text-align: center;
     p {
         color: #e295a6;
-        font-family: "Ballet", cursive;
-        font-size: 2.5rem;
+        font-family: "Covered By Your Grace", cursive;
+        font-size: 2rem;
     }
     .p-big {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 }
 

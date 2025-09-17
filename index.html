@@ -402,31 +402,31 @@
                 <script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=jpufhgyn6s"></script>
                 <!-- 지도 호출 -->
                 <script>
-                    // 지도 생성
                     var map = new naver.maps.Map('map', {
-                        center: new naver.maps.LatLng(37.5216459, 126.9191366), // 초기 좌표 (서울시청)
-                        zoom: 14
+                        center: new naver.maps.LatLng(36.496855045139, 127.2241356515), // 파티제이테라스 위치
+                        zoom: 16  // 필요하면 조정
                     });
 
-                    // 마커 생성
                     var marker = new naver.maps.Marker({
-                        position: new naver.maps.LatLng(37.5216459, 126.9191366),
-                        map: map
+                        position: new naver.maps.LatLng(36.496855045139, 127.2241356515),
+                        map: map,
+                        title: "파티제이테라스"
                     });
                 </script>
+
                 <!-- 네비게이션 버튼 -->
                 <div class="quick-map">
-                    <a href="https://map.naver.com/p/entry/place/11865877?c=17.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202508100018&locale=ko&svcName=map_pcv5" class="quick-btn">
+                    <a href="https://map.naver.com/p/entry/place/1380544833?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202509180023&locale=ko&svcName=map_pcv5" class="quick-btn">
                         <img src="./img/navermap1.jpeg" alt="네이버지도">
                         <p>네이버지도</p>
                     </a>
                     <div class="line"></div>
-                    <a href="https://place.map.kakao.com/8011957" target="_blank" class="quick-btn">
+                    <a href="https://place.map.kakao.com/1379208057" target="_blank" class="quick-btn">
                         <img src="./img/kakaonavi1.jpeg" alt="카카오네비">
                         <p>카카오네비</p>
                     </a>
                     <div class="line"></div>
-                    <a href="https://tmap.life/67565e02" class="quick-btn">
+                    <a href="https://tmap.life/5aace63c" class="quick-btn">
                         <img src="./img/tmap1.jpeg" alt="티맵">
                         <p>티맵</p>
                     </a>
@@ -440,6 +440,7 @@
             <p>
                 지웅이의 앞날을 언제나 따뜻하게 지켜주신 가족분들과 사랑으로 응원해주신 모든 분들께 감사드립니다.
             </p>
+            <p></p>
         </div>
     </footer>
     <div id="bgm-wrap">

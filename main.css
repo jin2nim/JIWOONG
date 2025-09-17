@@ -68,7 +68,7 @@ img {
     margin-bottom: calc(-100% / 15);
 }
 .text_blue {
-    color: #7aaac7;
+    color: #6D94C5;
 }
 .text_pink {
     color: #e295a6;
@@ -97,7 +97,7 @@ img {
     display: inline-block;
     width: 0.7rem;
     height: 0.7rem;
-    background-image: url("data:image/svg+xml;utf8,<svg fill='%23e295a6' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 C2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09 C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5 c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%236D94C5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 C2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09 C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5 c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>");
     background-size: contain;
     background-repeat: no-repeat;
     margin: 0 25px;
@@ -183,6 +183,7 @@ section {
         background-size: auto 50px;
         height: 50px;
         width: 100%;
+        margin: 24px 0;
     }
     .name {
         margin: 36px 0;
@@ -214,7 +215,7 @@ section {
         position: absolute;
         width: 40%;
         height: 100%;
-        border: thin solid #e295a6;
+        border: thin solid #6D94C5;
         top: 0;
         left: 50%;
         border-radius: 100%;
@@ -245,7 +246,7 @@ section {
             visibility: hidden;
         }   
         .dday {
-            background-color: #e295a6;
+            background-color: #6D94C5;
             color: white;
             font-weight: bold;
             position: relative;
@@ -255,7 +256,7 @@ section {
             display: inline-block;
             width: 1rem;
             height: 1rem;
-            background-image: url("data:image/svg+xml;utf8,<svg fill='%23e295a6' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 C2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09 C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5 c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>");
+            background-image: url("data:image/svg+xml;utf8,<svg fill='%236D94C5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 C2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09 C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5 c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>");
             background-size: contain;
             background-repeat: no-repeat;
             position: absolute;
@@ -268,7 +269,7 @@ section {
     .info {
         margin-top: 40px;
         padding: 30px 20px 20px;
-        border: 1px solid #e295a6;
+        border: 1px solid #6D94C5;
         /* border-radius: 5px; */
         width: 70%;
         position: relative;   
@@ -287,7 +288,7 @@ section {
         position: absolute;
         width: 100%;
         height: 100%;
-        border: 1px solid #e295a6;
+        border: 1px solid #6D94C5;
         top: 5px;
         left: 5px;
     }
@@ -298,6 +299,9 @@ section {
     background-image: url(./img/pattern.png);
     background-repeat: no-repeat;
     padding: 50px 0;
+    .sub_title {
+        margin-bottom: 50px;
+    }
     .flex_area {
         display: flex;
         width: 75%;
@@ -410,6 +414,29 @@ section {
     .sub_title {
         padding-top: 80px;
     }
+    hr {
+            width: 80%;
+            margin: 0 auto;
+            border: thin solid #CBDCEB;
+    }
+    .jiwoong-profile {
+        padding: 50px 0;
+        
+        img {
+            max-width: 50%;
+        }
+        p, span {
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+        .name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            span {
+                font-weight: normal;
+            }
+        }
+    }
     .profile-grid {
         display: grid;
         width: 80%;
@@ -433,7 +460,7 @@ section {
             height: 16px;
         }
     }
-    .bloom, .bride {
+    .bloom, .bride, .jiwoong-profile {
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -504,6 +531,7 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 100px;
     .sub_title {
         padding: 80px 0 50px;
     }
@@ -835,7 +863,7 @@ footer {
     z-index: 999;
     opacity: 1;
     transition: opacity 2s;
-    background-color: #efe5ee;
+    background-color: #CBDCEB;
     /* 배경을 이미지로 할 경우 */
     /* background-image: url(./gallery/12.jpg);
     background-repeat: no-repeat;
@@ -847,7 +875,7 @@ footer {
     align-items: center;
     text-align: center;
     p {
-        color: #e295a6;
+        color: #6D94C5;
         font-family: 'blacksword', cursive;
         font-size: 2.2rem;
         white-space: nowrap;
